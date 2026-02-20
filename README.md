@@ -40,3 +40,30 @@ We evaluate the rate–distortion performance of the proposed uniMaskRC-DPCC by 
 
 Complexity analysis for two sequences, including model size and runtime comparison. TMAPv4’s model size only for geometry compression.
 
+![Complexity](./assets/complexity_analysis.png)
+
+# ⚙️Requirments environment
+* Create env：
+```
+conda create -n uniDPCC python=3.8
+conda activate uniDPCC
+conda install uniDPCC devel -c anaconda
+```
+- Install torch：
+```
+pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
+```
+* ## install MinkowskiEngine：
+[MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine)
+* ## Requirements
+Step 1. Install requirements:
+```
+pip install -r requirements.txt
+```
+Step 2. Use the torchacc
+```
+cd torchacc/
+python3 setup.py install
+cd ../
+```
+
