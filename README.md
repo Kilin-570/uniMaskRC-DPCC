@@ -9,6 +9,8 @@
     National Chung Cheng University, Taiwan<br>
 </p>
 
+---
+
 # Official Implementation for uniMaskRC-DPCC
 
 * We propose uniMaskRC-DPCC, a dynamic extension of MEGA-PCC that enables end-to-end joint geometry–attribute compression under a unified encoder and dual decoders, avoiding separate pipelines and manual bitrate allocation.
@@ -22,4 +24,19 @@ Dynamic point cloud compression faces significant challenges due to the inherent
 To address these limitations, we present uniMaskRC-DPCC, the first fully end-to-end unified framework for dynamic point cloud compression which enables joint optimization across temporal sequences, eliminating the need for recoloring and manual bitrate allocation. The key innovation is a learnable mask-guided residual coding mechanism that adaptively identifies prediction-unreliable regions and selectively switches between residual coding and direct feature transmission, preserving compression efficiency in temporally coherent areas while enhancing robustness in high-motion dynamic regions. 
 
 Experimental results demonstrate that uniMaskRC-DPCC achieves superior performance with 86.8% D1 BD-Rate and 76.7% Y BD-Rate reductions compared to G-PCC, and 57.4% D1 BD-Rate reduction compared to TMAPv4, while maintaining competitive attribute and perceptual performance.
+
+![Pipeline](./assets/proposed-arc_predictor_w-oneborder.png)
+<p align="center">
+    (a) The overall architecture of the proposed uniMaskRC-DPCC (b) Mask Predictor module
+</p>
+
+# Result
+
+We evaluate the rate–distortion performance of the proposed uniMaskRC-DPCC by comparing it with standardbased and learning-based codecs, including G-PCC, V-PCC, TMAPv4, and MEGA-PCC.
+
+![Results](./assets/All-RD.png)
+
+# Complexity Analysis
+
+Complexity analysis for two sequences, including model size and runtime comparison. TMAPv4’s model size only for geometry compression.
 
